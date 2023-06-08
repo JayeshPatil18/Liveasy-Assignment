@@ -30,33 +30,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
-<!--        <View-->
-<!--            android:layout_width="10dp"-->
-<!--            android:layout_height="match_parent"/>-->
-
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"/>-->
-
-<!--        <View-->
-<!--            android:layout_width="10dp"-->
-<!--            android:layout_height="match_parent"/>-->
-
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"/>-->
-
-<!--        <View-->
-<!--            android:layout_width="10dp"-->
-<!--            android:layout_height="match_parent"/>-->
-
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"/>-->
-
     </LinearLayout>
 
     <TextView
@@ -64,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="Verification Code has been send to"
+        android:text="Verification Code has been sent to"
         android:textColor="#515151"
         android:textSize="15sp" />
     <TextView

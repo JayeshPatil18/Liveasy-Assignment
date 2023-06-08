@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false);
 
-        if (!isLoggedIn) {
+        if (isLoggedIn) {
             startActivity(new Intent(MainActivity.this,ScanQR.class));
             finish();
         } else {
@@ -52,15 +52,13 @@ public class MainActivity extends AppCompatActivity {
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                     if (TextUtils.isEmpty(phone.getText().toString())) {
-                        // when mobile number text field is empty
-                        // displaying a toast message.
                         Toast.makeText(MainActivity.this, "Please enter a valid phone number.", Toast.LENGTH_SHORT).show();
+                    } else if (phone.getText().toString().length() != 10 || containsNonDigit(phone.getText().toString())) {
+                        Toast.makeText(MainActivity.this, "Invalid phone number.", Toast.LENGTH_SHORT).show();
                     } else {
-                        // if the text field is not empty we are calling our
-                        // send OTP method for getting OTP from Firebase.
                         String phone = ccp.getSelectedCountryCodeWithPlus().replace(" ", "") + MainActivity.this.phone.getText().toString();
-                        Toast.makeText(MainActivity.this, phone, Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(MainActivity.this, VerifyOTP.class);
                         intent.putExtra("mobile", phone);
                         startActivity(intent);
@@ -68,5 +66,21 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    public static boolean containsNonDigit(String str) {
+
+        // Convert the string to a char array.
+        char[] chars = str.toCharArray();
+
+        // Loop through the char array and check if any character is not a digit.
+        for (char c : chars) {
+            if (!Character.isDigit(c)) {
+                return true;
+            }
+        }
+
+        // If no character is not a digit, then the string only contains digits.
+        return false;
     }
 }

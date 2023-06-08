@@ -109,6 +109,7 @@ public class VerifyOTP extends AppCompatActivity {
                             SharedPreferences sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putBoolean("isLoggedIn", true);
+                            editor.putString("phoneno", phonenumber);
                             editor.apply();
 
                         } else {
