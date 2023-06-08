@@ -18,6 +18,24 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+<!--        <com.hbb20.CountryCodePicker-->
+<!--            app:ccp_defaultNameCode="IND"-->
+<!--            android:id="@+id/country_code"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:ccp_autoDetectCountry="true"-->
+<!--            app:ccp_showFlag="true"-->
+<!--            app:ccp_showNameCode="true"-->
+<!--            app:ccp_showFullName="true">-->
+<!--        </com.hbb20.CountryCodePicker>-->
+    </LinearLayout>
+
     <EditText
         android:id="@+id/phoneno"
         android:layout_width="match_parent"
