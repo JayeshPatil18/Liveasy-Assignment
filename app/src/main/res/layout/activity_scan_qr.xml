@@ -51,7 +51,8 @@
                 android:layout_height="110dp"
                 android:background="@drawable/round_btn"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
 
                 <Button
                     android:id="@+id/scanCode"
