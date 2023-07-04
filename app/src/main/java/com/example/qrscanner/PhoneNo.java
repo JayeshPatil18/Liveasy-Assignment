@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hbb20.CountryCodePicker;
@@ -20,6 +21,8 @@ public class PhoneNo extends AppCompatActivity {
 
     CountryCodePicker ccp;
 
+    ImageView back;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,25 +30,30 @@ public class PhoneNo extends AppCompatActivity {
 
             next = findViewById(R.id.authbtn);
             phone = findViewById(R.id.phoneno);
+            back = findViewById(R.id.back1);
             ccp = (CountryCodePicker) findViewById(R.id.ccp);
 
             next.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(PhoneNo.this, VerifyOTP.class);
-                    intent.putExtra("mobile", "phone");
-                    startActivity(intent);
 
-//                    if (TextUtils.isEmpty(phone.getText().toString())) {
-//                        Toast.makeText(PhoneNo.this, "Please enter a valid phone number.", Toast.LENGTH_SHORT).show();
-//                    } else if (phone.getText().toString().length() != 10 || containsNonDigit(phone.getText().toString())) {
-//                        Toast.makeText(PhoneNo.this, "Invalid phone number.", Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        String phone = ccp.getSelectedCountryCodeWithPlus().replace(" ", "") + PhoneNo.this.phone.getText().toString();
-//                        Intent intent = new Intent(PhoneNo.this, VerifyOTP.class);
-//                        intent.putExtra("mobile", phone);
-//                        startActivity(intent);
-//                    }
+                    if (TextUtils.isEmpty(phone.getText().toString())) {
+                        Toast.makeText(PhoneNo.this, "Please enter a valid phone number.", Toast.LENGTH_SHORT).show();
+                    } else if (phone.getText().toString().length() != 10 || containsNonDigit(phone.getText().toString())) {
+                        Toast.makeText(PhoneNo.this, "Invalid phone number.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        String phone = ccp.getSelectedCountryCodeWithPlus().replace(" ", "") + PhoneNo.this.phone.getText().toString();
+                        Intent intent = new Intent(PhoneNo.this, VerifyOTP.class);
+                        intent.putExtra("mobile", phone);
+                        startActivity(intent);
+                    }
+                }
+            });
+
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onBackPressed();
                 }
             });
 

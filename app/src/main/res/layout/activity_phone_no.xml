@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".PhoneNo">
 
+        <ImageView
+            android:id="@+id/back1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            app:srcCompat="@drawable/baseline_cancel_24"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +25,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:gravity="center"
             android:text="Please enter your mobile number"
             android:textColor="@color/black"
@@ -54,7 +62,8 @@
                 android:id="@+id/phoneno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Phone Number" />
+                android:hint="Mobile Number"
+                android:layout_margin="4dp"/>
 
         </LinearLayout>
 
@@ -65,7 +74,8 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/btn"
             android:text="Continue"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ImageView

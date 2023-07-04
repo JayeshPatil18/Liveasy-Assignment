@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QR Scanner</string>
+    <string name="app_name">Liveasy</string>
 
     <string-array name="languages">
         <item>English</item>
