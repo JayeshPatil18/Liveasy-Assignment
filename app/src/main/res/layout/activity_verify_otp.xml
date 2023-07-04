@@ -9,6 +9,8 @@
     android:orientation="vertical"
     android:padding="40dp">
 
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,42 +21,182 @@
         android:textStyle="bold" />
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Code is sent to "
+            android:textColor="#515151"
+            android:textSize="15sp"/>
+
+
+
+        <TextView
+            android:id="@+id/sentto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="+1xxxxxxxxxx"
+            android:textColor="#515151"
+            android:textSize="15sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="50dp">
 
+<!--        <EditText-->
+<!--            android:id="@+id/optcode"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"/>-->
+
         <EditText
-            android:id="@+id/optcode"
-            android:layout_width="match_parent"
+            android:id="@+id/otpEditText1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text_border"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/otpEditText2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text_border"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/otpEditText3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text_border"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/otpEditText4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text_border"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/otpEditText5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text_border"
+            android:imeOptions="actionNext"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/otpEditText6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="20sp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:background="@drawable/edit_text_border"
+            android:imeOptions="actionDone"/>
+
 
     </LinearLayout>
 
-    <TextView
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="Verification Code has been sent to"
-        android:textColor="#515151"
-        android:textSize="15sp" />
-    <TextView
-        android:id="@+id/sentto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="+1xxxxxxxxxx"
-        android:textColor="#515151"
-        android:textSize="15sp" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Didn't receive the code? "
+            android:textColor="#515151"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Request Again"
+            android:textColor="#515151"
+            android:textSize="15sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+
 
     <Button
         android:id="@+id/verifybtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Verify"
+        android:text="Verify and continue"
         android:textColor="@color/white"
-        android:background="@drawable/btn_design"/>
+        android:background="@drawable/btn"/>
 </LinearLayout>

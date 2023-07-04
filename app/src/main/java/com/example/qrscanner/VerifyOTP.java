@@ -41,26 +41,28 @@ public class VerifyOTP extends AppCompatActivity {
 
         phonenumber = getIntent().getStringExtra("mobile").toString();
         verify = findViewById(R.id.verifybtn);
-        editOTP = findViewById(R.id.optcode);
+        editOTP = findViewById(R.id.otpEditText1);
         sentto = findViewById(R.id.sentto);
         mAuth=FirebaseAuth.getInstance();
 
         sentto.setText(phonenumber);
 
-        initiateotp();
+//        initiateotp();
 
         verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(editOTP.getText().toString().isEmpty())
-                    Toast.makeText(getApplicationContext(),"Blank Field can not be processed",Toast.LENGTH_LONG).show();
-                else if(editOTP.getText().toString().length()!=6)
-                    Toast.makeText(getApplicationContext(),"Invalid OTP",Toast.LENGTH_LONG).show();
-                else
-                {
-                    PhoneAuthCredential credential=PhoneAuthProvider.getCredential(otpid,editOTP.getText().toString());
-                    signInWithPhoneAuthCredential(credential);
-                }
+                Intent intent = new Intent(VerifyOTP.this, SelectProfile.class);
+                startActivity(intent);
+//                if(editOTP.getText().toString().isEmpty())
+//                    Toast.makeText(getApplicationContext(),"Blank Field can not be processed",Toast.LENGTH_LONG).show();
+//                else if(editOTP.getText().toString().length()!=6)
+//                    Toast.makeText(getApplicationContext(),"Invalid OTP",Toast.LENGTH_LONG).show();
+//                else
+//                {
+//                    PhoneAuthCredential credential=PhoneAuthProvider.getCredential(otpid,editOTP.getText().toString());
+//                    signInWithPhoneAuthCredential(credential);
+//                }
             }
         });
     }
@@ -102,7 +104,7 @@ public class VerifyOTP extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
-                            Intent intent = new Intent(VerifyOTP.this, ScanQR.class);
+                            Intent intent = new Intent(VerifyOTP.this, SelectProfile.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                             // Save login state
